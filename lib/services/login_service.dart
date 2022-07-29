@@ -10,7 +10,7 @@ class LoginService {
   Future<dynamic> login(UserLoginModel model) async {
     final response = await http.post(
       Uri.parse('http://localhost:4000/api/login'),
-      body: model,
+      body: model.toJson(),
     );
 
     switch (response.statusCode) {
